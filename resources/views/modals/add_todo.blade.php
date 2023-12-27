@@ -8,8 +8,13 @@
             <form action="{{ route('goals.todos.store', $goal) }}" method="post">
                 @csrf
                 <div class="modal-body">
+                    <label class="modal-title mb-2">Todo</label>
                     <input type="text" class="form-control" name="content">
                     <div class="d-flex flex-wrap">
+
+                    <label class="modal-title  mt-2 mb-2">詳細</label>
+                    <input type="text" class="form-control" name="description">
+
                         @foreach ($tags as $tag)
                             <label>
                                 <div class="d-flex align-items-center mt-3 me-3">

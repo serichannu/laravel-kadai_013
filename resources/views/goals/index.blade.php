@@ -107,7 +107,14 @@
                                     </ul>
                                 </div>
                             </div>
-                            <h6 class="card-subtitle ms-1 mb-1 text-muted">{{ $todo->created_at }}</h6>
+                            <h5 class="card-title ms-1 mb-0">
+                                @if ($todo->done)
+                                    {{ $todo->description }}
+                                    @else
+                                    {{ $todo->description }}
+                                @endif
+                            </h5>
+                            <h6 class="card-subtitle ms-1 m-0 text-muted">{{ $todo->created_at }}</h6>
                             <div class="d-flex flex-wrap mx-1 mb-1">
                                 @foreach ($todo->tags()->orderBy('id', 'asc')->get() as $tag)
                                     <span class="badge bg-secondary mt-2 me-2 fw-light">{{ $tag->name }}</span>
